@@ -4,22 +4,8 @@
   <meta charset="UTF-8" />
   <title>Your Name | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Your Name - Role (e.g. Frontend Developer, CS Student)">
   <style>
-    :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius: 14px;
-      --shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
-      --transition: 0.25s ease;
-    }
-
+    /* ---------- Base styles ---------- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -27,885 +13,610 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 45%, #020617 100%);
-      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f5f5f5; /* off-white */
+      color: #111827;
       line-height: 1.6;
-      padding: 0;
-      margin: 0;
     }
 
     a {
-      color: var(--accent);
+      color: #2563eb;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
 
+    .container {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- Header / Nav ---------- */
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85), transparent);
-      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+      z-index: 10;
+      background-color: #f5f5f5ee;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0.8rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0.9rem 0;
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .logo {
       font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      color: var(--muted);
+      letter-spacing: 0.06em;
+      font-size: 0.95rem;
     }
 
-    .nav-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #e0f2fe, #38bdf8 40%, #0ea5e9 80%);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
-    }
-
-    .nav-links {
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 1.2rem;
       font-size: 0.9rem;
     }
 
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0.25rem 0;
+    nav a {
       position: relative;
+      color: #4b5563;
+      padding-bottom: 0.1rem;
     }
 
-    .nav-links a::after {
+    nav a:hover {
+      color: #111827;
+    }
+
+    nav a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -2px;
+      bottom: -0.25rem;
       width: 0;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(to right, #38bdf8, #a855f7);
-      transition: width var(--transition);
+      background-color: #2563eb;
+      transition: width 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a:hover::after {
+    nav a:hover::after {
       width: 100%;
     }
 
+    /* ---------- Sections ---------- */
     main {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 2rem 0 3rem;
     }
 
-    /* Hero section */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-heading {
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    /* ---------- Hero / Top area ---------- */
     .hero {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 2rem;
       display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
       gap: 2rem;
-      align-items: center;
-      padding: 2.2rem 1.8rem;
-      border-radius: 28px;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.16), transparent 52%),
-                  linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      margin-bottom: 3rem;
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.09), transparent 60%);
-      opacity: 0.4;
-      pointer-events: none;
-      mix-blend-mode: soft-light;
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      padding: 0.2rem 0.6rem;
-      background: rgba(15, 23, 42, 0.8);
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-badge-pill {
-      padding: 0.08rem 0.55rem;
-      border-radius: 999px;
-      background: linear-gradient(to right, rgba(56, 189, 248, 0.3), rgba(168, 85, 247, 0.25));
-      color: #e0f2fe;
-      font-size: 0.78rem;
-      font-weight: 500;
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 4vw, 2.9rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
       margin-bottom: 0.4rem;
     }
 
-    .hero-subtitle {
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-role {
       font-size: 1rem;
-      color: var(--muted);
-      max-width: 30rem;
-      margin-bottom: 1.2rem;
+      color: #4b5563;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-summary {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 1.3rem;
+      max-width: 34rem;
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 1.6rem;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 1.2rem;
     }
 
     .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.7rem;
+      background-color: #f3f4f6;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background-color: rgba(15, 23, 42, 0.8);
+      padding: 0.2rem 0.8rem;
     }
 
-    .hero-buttons {
+    /* Contact block (top, near photo) */
+    #contact {
+      font-size: 0.9rem;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
+    }
+
+    .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 1.4rem;
+      gap: 0.6rem;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.9rem;
-      cursor: pointer;
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text);
-      text-decoration: none;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 20% 0, #e0f2fe, #38bdf8 40%, #0ea5e9 80%);
-      color: #0b1120;
-      border-color: rgba(56, 189, 248, 0.8);
-      box-shadow: 0 18px 35px rgba(8, 47, 73, 0.6);
-      font-weight: 600;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.7);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 20px 40px rgba(8, 47, 73, 0.75);
-    }
-
-    .hero-links {
-      display: flex;
-      gap: 0.9rem;
+    .contact-chip {
       font-size: 0.85rem;
-      color: var(--muted);
-      align-items: center;
-    }
-
-    .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.15rem 0.5rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(31, 41, 55, 0.9);
+      background-color: #eef2ff;
+      color: #1d4ed8;
+      white-space: nowrap;
     }
 
-    .hero-right {
-      position: relative;
+    /* Photo area */
+    .hero-photo-area {
       display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .profile-card {
-      position: relative;
-      width: 260px;
-      height: 260px;
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at 30% 0, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.98));
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .profile-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at bottom, rgba(15, 23, 42, 0.95), transparent 55%);
-      mix-blend-mode: soft-light;
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .profile-image {
-      width: 88%;
-      height: 88%;
-      border-radius: 28px;
-      object-fit: cover;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      position: relative;
-      z-index: 1;
-    }
-
-    .profile-pill {
-      position: absolute;
-      left: -6px;
-      top: 14px;
-      padding: 0.3rem 0.85rem;
-      font-size: 0.78rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(56, 189, 248, 0.7);
-      color: var(--muted);
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .profile-pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-    }
-
-    .profile-tag {
-      position: absolute;
-      right: 10px;
-      bottom: 12px;
-      padding: 0.25rem 0.7rem;
-      font-size: 0.78rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(129, 140, 248, 0.7);
-      color: #c7d2fe;
-      z-index: 2;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(12px);
-      opacity: 0.85;
-      mix-blend-mode: screen;
-    }
-
-    .orb-blue {
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.36), transparent 65%);
-      top: -40px;
-      right: -40px;
-    }
-
-    .orb-purple {
-      width: 110px;
-      height: 110px;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 65%);
-      bottom: -40px;
-      left: 0;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-title {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-      display: inline-block;
-    }
-
-    .section-heading-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 1rem;
-      margin-bottom: 1.4rem;
     }
 
-    .section-heading {
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
+    .photo-frame {
+      width: 210px;
+      height: 210px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #e5e7eb;
+      border: 1px solid #d1d5db;
     }
 
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 28rem;
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      font-size: 0.8rem;
+      color: #6b7280;
       text-align: right;
     }
 
-    /* Interests / About */
-    .pill-row {
+    /* ---------- Profile / Interests ---------- */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+    }
+
+    .pill-list {
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-top: 0.4rem;
     }
 
     .pill {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.8);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--muted);
+      background-color: #e5e7eb;
+      color: #374151;
     }
 
-    .pill.highlight {
-      border-color: rgba(56, 189, 248, 0.9);
-      background: rgba(15, 23, 42, 0.8);
-      color: #e0f2fe;
+    /* ---------- Skills / Tech stack ---------- */
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
     }
 
-    .about-text {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 46rem;
-      margin-bottom: 1rem;
+    .tag {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: #eef2ff;
+      color: #1f2937;
     }
 
-    /* Cards grid */
-    .grid {
+    .skills-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills-list li {
+      margin-bottom: 0.3rem;
+      font-size: 0.93rem;
+    }
+
+    /* ---------- Cards (Education & Experience) ---------- */
+    .card-list {
       display: grid;
       gap: 1rem;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 0.75rem;
     }
 
     .card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
-      border-radius: var(--radius);
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
       padding: 1rem;
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      box-shadow: 0 14px 26px rgba(15, 23, 42, 0.85);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 60%);
-      opacity: 0.8;
-      pointer-events: none;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 0.4rem;
+      gap: 0.6rem;
+      margin-bottom: 0.3rem;
     }
 
     .card-title {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.98rem;
     }
 
-    .card-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .card-badge {
+      font-size: 0.75rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      white-space: nowrap;
     }
 
     .card-body {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #4b5563;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.6rem;
+    .card-body ul {
+      list-style: disc;
+      margin-left: 1.1rem;
+      margin-top: 0.3rem;
     }
 
-    .tag {
-      font-size: 0.8rem;
-      padding: 0.16rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.95);
-      color: var(--muted);
+    .card-body li {
+      margin-bottom: 0.2rem;
     }
 
-    .tag.tech {
-      border-color: rgba(56, 189, 248, 0.85);
-      color: #bae6fd;
-    }
-
-    .card-list {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.4rem;
-    }
-
-    .card-list li {
-      position: relative;
-      padding-left: 1.1rem;
-      margin-bottom: 0.25rem;
-      font-size: 0.86rem;
-    }
-
-    .card-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-    }
-
-    /* Projects */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .project-card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(8, 47, 73, 0.95), rgba(15, 23, 42, 1));
-      border-radius: var(--radius);
-      padding: 1rem;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      box-shadow: 0 18px 36px rgba(8, 47, 73, 0.85);
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-chip {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #bae6fd;
-      opacity: 0.9;
-    }
-
-    .project-title {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .project-body {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .project-links {
-      margin-top: 0.4rem;
-      display: flex;
-      gap: 0.8rem;
-      font-size: 0.82rem;
-    }
-
-    .project-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.16rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.6);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e0f2fe;
-      text-decoration: none;
-    }
-
-    .project-links a:hover {
-      border-color: rgba(248, 250, 252, 0.9);
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
-    }
-
-    .skills-column-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    /* Footer */
+    /* ---------- Footer ---------- */
     footer {
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 1.2rem 1.5rem 1.8rem;
-      max-width: 1040px;
-      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+      padding: 1.2rem 0 2rem;
       font-size: 0.8rem;
-      color: var(--muted);
+      color: #6b7280;
+    }
+
+    footer .container {
       display: flex;
       justify-content: space-between;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    /* Responsive */
-    @media (max-width: 860px) {
-      .hero {
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .hero-card {
         grid-template-columns: minmax(0, 1fr);
-        padding: 1.6rem 1.4rem;
       }
-      .hero-right {
-        order: -1;
-      }
-      .hero-subtitle {
-        max-width: none;
-      }
-      .section-heading-row {
-        flex-direction: column;
+
+      .hero-photo-area {
         align-items: flex-start;
       }
-      .section-subtitle {
+
+      .photo-caption {
         text-align: left;
       }
-      .grid-2,
-      .project-grid,
-      .skills-grid {
+
+      .two-column {
         grid-template-columns: minmax(0, 1fr);
       }
-    }
 
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-      main {
-        padding-inline: 1.1rem;
-      }
-      footer {
-        padding-inline: 1.1rem;
-        flex-direction: column;
+      nav ul {
+        gap: 0.8rem;
+        font-size: 0.85rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Header / Nav -->
   <header>
-    <nav class="nav">
-      <div class="nav-left">
-        <span class="nav-dot"></span>
-        <span>Your Name</span>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+    <div class="container nav">
+      <!-- Replace "YN" with your initials or name -->
+      <div class="logo">YN</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="hero-badge-pill">Open to opportunities</span>
-          <span>Portfolio &bull; 2025</span>
-        </div>
-        <h1 class="hero-title">Your Name</h1>
-        <div class="hero-meta">
-          <span>Role • e.g. Frontend Developer</span>
-          <span>Location • e.g. City, Country</span>
-        </div>
-        <p class="hero-subtitle">
-          Short 2–3 line introduction about who you are, what you work on, and what you’re looking for.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="#contact" class="btn">Contact me</a>
-        </div>
-        <div class="hero-links">
-          <span>Find me on</span>
-          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="profile-card">
-          <div class="profile-pill">
-            <span class="profile-pill-dot"></span>
-            Available for work
-          </div>
-          <img src="images/profile.jpg" alt="Your Name" class="profile-image">
-          <div class="profile-tag">Building &amp; learning</div>
-          <div class="orb orb-blue"></div>
-          <div class="orb orb-purple"></div>
-        </div>
-      </div>
-    </section>
+    <!-- Hero / Top section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <!-- Left: intro + contact -->
+          <div>
+            <div class="hero-eyebrow">Home</div>
+            <h1>Hi, I'm Your Name</h1>
+            <p class="hero-role">Your role (e.g. Frontend Developer / CS Student)</p>
+            <p class="hero-summary">
+              A short 2–3 line summary about you. For example:
+              “I'm a developer focused on building clean, user-friendly web applications.
+              I enjoy solving real problems with simple, maintainable code.”
+            </p>
 
-    <!-- About & Interests -->
-    <section id="about">
-      <div class="section-heading-row">
-        <div>
-          <span class="section-title">About</span>
-          <h2 class="section-heading">Who I am &amp; what I enjoy</h2>
-        </div>
-        <p class="section-subtitle">
-          A quick overview of your background, interests, and what motivates you as a developer / professional.
-        </p>
-      </div>
-
-      <p class="about-text">
-        Replace this with a short paragraph about yourself: your background, what you’re learning, and what kind of roles or projects you’re excited about.
-      </p>
-
-      <div class="pill-row">
-        <span class="pill highlight">Interests</span>
-        <span class="pill">Web development</span>
-        <span class="pill">UI/UX</span>
-        <span class="pill">Open source</span>
-        <span class="pill">Learning new technologies</span>
-      </div>
-    </section>
-
-    <!-- Education & Experience -->
-    <section id="experience">
-      <div class="section-heading-row">
-        <div>
-          <span class="section-title">Timeline</span>
-          <h2 class="section-heading">Education &amp; experience</h2>
-        </div>
-        <p class="section-subtitle">
-          Highlight your most relevant roles and studies. Focus on impact, not just responsibilities.
-        </p>
-      </div>
-
-      <div class="grid grid-2">
-        <!-- Education card -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <h3 class="card-title">Degree / Program</h3>
-              <div class="card-meta">University / School &bull; 2021 – 2025</div>
+            <div class="hero-meta">
+              <span>Based in Your City</span>
+              <span>Open to opportunities</span>
             </div>
-            <span class="tag">Education</span>
-          </div>
-          <ul class="card-list">
-            <li>Relevant coursework, achievements, or focus areas.</li>
-            <li>Mention GPA or awards if they are strong and relevant.</li>
-          </ul>
-        </article>
 
-        <!-- Experience card example -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <h3 class="card-title">Job title / Internship</h3>
-              <div class="card-meta">Company Name &bull; 2023 – Present</div>
-            </div>
-            <span class="tag">Experience</span>
+            <!-- Contact block (on top, near profile photo) -->
+            <section id="contact">
+              <div class="contact-card">
+                <div class="contact-label">Contact</div>
+                <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
+                <div class="contact-row">
+                  <a class="contact-chip" href="https://github.com/yourusername" target="_blank">GitHub</a>
+                  <a class="contact-chip" href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
+                  <!-- Add more if you like -->
+                </div>
+              </div>
+            </section>
           </div>
-          <ul class="card-list">
-            <li>What you worked on and what problems you solved.</li>
-            <li>Technologies or tools you used.</li>
-            <li>Concrete outcomes where possible (numbers, improvements).</li>
-          </ul>
-        </article>
+
+          <!-- Right: photo -->
+          <div class="hero-photo-area">
+            <div class="photo-frame">
+              <!-- Put your image in /images/profile.jpg or change this path -->
+              <img src="images/profile.jpg" alt="Your Name">
+            </div>
+            <p class="photo-caption">
+              Replace this placeholder image with your own photo.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Skills & Tech Stack -->
+    <!-- Profile / Interests -->
+    <section id="profile">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-title">Profile</div>
+          <h2>About me & interests</h2>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <p>
+              Write a short paragraph about your background: what you’re studying or working on,
+              what kind of work you want to do, and what motivates you.
+              Keep it simple and honest.
+            </p>
+          </div>
+          <div>
+            <p><strong>Interests</strong></p>
+            <ul class="pill-list">
+              <li class="pill">Web development</li>
+              <li class="pill">UI/UX</li>
+              <li class="pill">Open source</li>
+              <li class="pill">Problem solving</li>
+              <!-- Add or change interests -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills (soft / general) -->
     <section id="skills">
-      <div class="section-heading-row">
-        <div>
-          <span class="section-title">Skills</span>
-          <h2 class="section-heading">Skills &amp; tech stack</h2>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-title">Skills</div>
+          <h2>Core skills</h2>
         </div>
-        <p class="section-subtitle">
-          Tools and technologies you’re most comfortable with. Group them so it’s easy to scan.
-        </p>
-      </div>
 
-      <div class="skills-grid">
-        <div>
-          <div class="skills-column-title">Languages</div>
-          <div class="tag-row">
-            <span class="tag tech">JavaScript</span>
-            <span class="tag tech">TypeScript</span>
-            <span class="tag tech">Python</span>
+        <div class="two-column">
+          <div>
+            <ul class="skills-list">
+              <li>Writing clean, readable code and documentation.</li>
+              <li>Breaking down problems into smaller, solvable steps.</li>
+              <li>Collaborating with teammates using Git and GitHub.</li>
+              <li>Communicating ideas clearly in written and spoken form.</li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <div class="skills-column-title">Frameworks &amp; Libraries</div>
-          <div class="tag-row">
-            <span class="tag tech">React</span>
-            <span class="tag tech">Node.js</span>
-            <span class="tag tech">Express</span>
-          </div>
-        </div>
-        <div>
-          <div class="skills-column-title">Tools &amp; Other</div>
-          <div class="tag-row">
-            <span class="tag tech">Git &amp; GitHub</span>
-            <span class="tag tech">REST APIs</span>
-            <span class="tag tech">HTML &amp; CSS</span>
+          <div>
+            <p style="font-size:0.9rem; color:#6b7280;">
+              Adjust this section to highlight your main strengths:
+              communication, ownership, learning speed, etc.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="section-heading-row">
-        <div>
-          <span class="section-title">Projects</span>
-          <h2 class="section-heading">Things I’ve built</h2>
+    <!-- Tech stack (hard skills) -->
+    <section id="tech-stack">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-title">Tech stack</div>
+          <h2>Tools & technologies</h2>
         </div>
-        <p class="section-subtitle">
-          A selection of projects that show your skills in action. Link to GitHub and live demos where possible.
-        </p>
-      </div>
 
-      <div class="project-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <div class="project-chip">Featured project</div>
-          <h3 class="project-title">Project Name</h3>
-          <p class="project-body">
-            Short description of what the project does, who it’s for, and what makes it interesting or challenging.
-          </p>
-          <div class="tag-row">
-            <span class="tag tech">React</span>
-            <span class="tag tech">TypeScript</span>
-            <span class="tag tech">API</span>
+        <div class="two-column">
+          <div>
+            <p><strong>Languages</strong></p>
+            <div class="tag-grid">
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <!-- Add or change -->
+            </div>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">Live demo</a>
+          <div>
+            <p><strong>Frameworks & tools</strong></p>
+            <div class="tag-grid">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Git & GitHub</span>
+              <span class="tag">HTML & CSS</span>
+              <!-- Add your stack -->
+            </div>
           </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-chip">Side project</div>
-          <h3 class="project-title">Another Project</h3>
-          <p class="project-body">
-            Brief explanation of the problem it solves or what you learned from building it.
-          </p>
-          <div class="tag-row">
-            <span class="tag tech">Node.js</span>
-            <span class="tag tech">MongoDB</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">Live demo</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="section-heading-row">
-        <div>
-          <span class="section-title">Contact</span>
-          <h2 class="section-heading">Let’s work together</h2>
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-title">Education</div>
+          <h2>Education</h2>
         </div>
-        <p class="section-subtitle">
-          A simple way for people to reach you. You can keep it as an email link or later add a contact form.
-        </p>
+
+        <div class="card-list">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Degree or Program</div>
+                <div class="card-subtitle">University / College · 2021 – 2025</div>
+              </div>
+              <span class="card-badge">Current / Completed</span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Relevant coursework or focus areas.</li>
+                <li>Notable achievements, GPA, or awards (if you want).</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Duplicate this card for more education entries if needed -->
+        </div>
       </div>
+    </section>
 
-      <p class="about-text">
-        If you’d like to discuss a role, collaboration, or project, feel free to reach out.
-      </p>
+    <!-- Professional Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-title">Experience</div>
+          <h2>Professional experience</h2>
+        </div>
 
-      <div class="pill-row">
-        <a class="pill highlight" href="mailto:youremail@example.com">youremail@example.com</a>
-        <a class="pill" href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a class="pill" href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
+        <div class="card-list">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Job title / Internship</div>
+                <div class="card-subtitle">Company name · 2023 – Present</div>
+              </div>
+              <span class="card-badge">Full-time / Intern</span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Describe what you worked on and your impact.</li>
+                <li>Mention technologies used.</li>
+                <li>Include specific results if possible (e.g. improved load time, reduced bugs).</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Add more experience cards as needed -->
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>© <span id="year"></span> Your Name</span>
-    <span>Built with GitHub Pages</span>
+    <div class="container">
+      <span>© <span id="year"></span> Your Name</span>
+      <span>Portfolio hosted on GitHub Pages</span>
+    </div>
   </footer>
 
   <script>
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
