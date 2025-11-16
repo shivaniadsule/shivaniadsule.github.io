@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Your Name | Portfolio</title>
@@ -12,9 +13,16 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      /* keeps sections from hiding under the sticky header */
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: #f5f5f5; /* off-white */
+      background-color: #f5f5f5;
+      /* off-white */
       color: #111827;
       line-height: 1.6;
     }
@@ -104,17 +112,12 @@
       margin-bottom: 1rem;
     }
 
-    .section-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #6b7280;
-      margin-bottom: 0.2rem;
-    }
-
     .section-heading h2 {
       font-size: 1.25rem;
       font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4b5563;
     }
 
     /* ---------- Hero / Top area ---------- */
@@ -166,7 +169,7 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       font-size: 0.85rem;
-      color: #6b7280;
+      color: #020202;
       margin-bottom: 1.2rem;
     }
 
@@ -177,7 +180,7 @@
     }
 
     /* Contact block (top, near photo) */
-    #contact {
+    #contact-block {
       font-size: 0.9rem;
     }
 
@@ -243,7 +246,7 @@
       text-align: right;
     }
 
-    /* ---------- Profile / Interests ---------- */
+    /* ---------- Layout helpers ---------- */
     .two-column {
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
@@ -266,7 +269,6 @@
       color: #374151;
     }
 
-    /* ---------- Skills / Tech stack ---------- */
     .tag-grid {
       display: flex;
       flex-wrap: wrap;
@@ -292,7 +294,6 @@
       font-size: 0.93rem;
     }
 
-    /* ---------- Cards (Education & Experience) ---------- */
     .card-list {
       display: grid;
       gap: 1rem;
@@ -388,20 +389,22 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Header / Nav -->
   <header>
     <div class="container nav">
       <!-- Replace "YN" with your initials or name -->
-      <div class="logo">YN</div>
+      <!-- <div class="logo">SA</div> -->
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#profile">Profile</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <!-- <li><a href="#skills">Skills</a></li> -->
           <li><a href="#tech-stack">Tech Stack</a></li>
-          <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -416,27 +419,26 @@
           <!-- Left: intro + contact -->
           <div>
             <div class="hero-eyebrow">Home</div>
-            <h1>Hi, I'm Your Name</h1>
-            <p class="hero-role">Your role (e.g. Frontend Developer / CS Student)</p>
+            <h1>Hi, I'm Shivani</h1>
+            <p class="hero-role">Senior Data Analyst at Media.net | MSc Business Analytics at University of Exeter</p>
             <p class="hero-summary">
-              A short 2–3 line summary about you. For example:
-              “I'm a developer focused on building clean, user-friendly web applications.
-              I enjoy solving real problems with simple, maintainable code.”
+              I’m driven by understanding how products grow, how users behave, and how data can unlock better decision-making.I enjoy solving real user problems by uncovering the “why” behind behaviour and translating it into product improvements.
             </p>
 
             <div class="hero-meta">
-              <span>Based in Your City</span>
-              <span>Open to opportunities</span>
+              <span>Based in United Kingdom</span>
+              <span>Open to opportunities in Product & Data roles</span>
             </div>
 
             <!-- Contact block (on top, near profile photo) -->
-            <section id="contact">
+            <section id="contact-block">
               <div class="contact-card">
                 <div class="contact-label">Contact</div>
-                <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
+                <div>Email: <a href="mailto:adsule.shivani@gmail.com">adsule.shivani@gmail.com</a></div>
                 <div class="contact-row">
-                  <a class="contact-chip" href="https://github.com/yourusername" target="_blank">GitHub</a>
-                  <a class="contact-chip" href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
+                  <a class="contact-chip" href="https://github.com/shivaniadsule" target="_blank">GitHub</a>
+                  <a class="contact-chip" href="https://www.linkedin.com/in/shivani-adsule-ab46051b5/"
+                    target="_blank">LinkedIn</a>
                   <!-- Add more if you like -->
                 </div>
               </div>
@@ -447,39 +449,47 @@
           <div class="hero-photo-area">
             <div class="photo-frame">
               <!-- Put your image in /images/profile.jpg or change this path -->
-              <img src="images/profile.jpg" alt="Your Name">
+              <img src="portfolio.jpeg" alt="Shiv">
             </div>
             <p class="photo-caption">
-              Replace this placeholder image with your own photo.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Profile / Interests -->
+    <!-- Profile -->
     <section id="profile">
       <div class="container">
         <div class="section-heading">
-          <div class="section-title">Profile</div>
-          <h2>About me & interests</h2>
+          <h2>PROFILE</h2>
         </div>
 
         <div class="two-column">
           <div>
             <p>
-              Write a short paragraph about your background: what you’re studying or working on,
-              what kind of work you want to do, and what motivates you.
-              Keep it simple and honest.
+              Data Analyst with 3 years of experience in adtech platform, focusing on customer acquisition and
+              monetization strategies.
+              I leverage SQL and Python to perform comprehensive data analysis on product features and user behaviour
+              patterns.
+              <br><br>
+              Passionate about machine learning and AI applications in business contexts. I focus on transforming data
+              into impactful business insights that drive strategic decision-making and deliver measurable results.
             </p>
+
           </div>
+
           <div>
-            <p><strong>Interests</strong></p>
             <ul class="pill-list">
-              <li class="pill">Web development</li>
-              <li class="pill">UI/UX</li>
-              <li class="pill">Open source</li>
+              <li class="pill">Product Strategy</li>
+              <li class="pill">A/B Testing</li>
+              <li class="pill">Data Visualisation</li>
               <li class="pill">Problem solving</li>
+              <li class="pill">Insights generation</li>
+              <li class="pill">Automation</li>
+              <li class="pill">Product Operations</li>
+              <li class="pill">ETL</li>
+              <li class="pill">Product-Led growth</li>
               <!-- Add or change interests -->
             </ul>
           </div>
@@ -487,12 +497,11 @@
       </div>
     </section>
 
-    <!-- Skills (soft / general) -->
+    <!-- Skills
     <section id="skills">
       <div class="container">
         <div class="section-heading">
-          <div class="section-title">Skills</div>
-          <h2>Core skills</h2>
+          <h2>SKILLS</h2>
         </div>
 
         <div class="two-column">
@@ -512,36 +521,124 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- Tech stack (hard skills) -->
+    <!-- Tech stack -->
     <section id="tech-stack">
       <div class="container">
         <div class="section-heading">
-          <div class="section-title">Tech stack</div>
-          <h2>Tools & technologies</h2>
+          <h2>TECH STACK</h2>
         </div>
 
+        <!-- Row 1 -->
         <div class="two-column">
           <div>
-            <p><strong>Languages</strong></p>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Programming Languages</strong></p>
             <div class="tag-grid">
-              <span class="tag">JavaScript</span>
-              <span class="tag">TypeScript</span>
               <span class="tag">Python</span>
-              <!-- Add or change -->
+              <span class="tag">SQL</span>
+              <span class="tag">R</span>
             </div>
           </div>
+
           <div>
-            <p><strong>Frameworks & tools</strong></p>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Analytics & BI Tools</strong></p>
             <div class="tag-grid">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Git & GitHub</span>
-              <span class="tag">HTML & CSS</span>
-              <!-- Add your stack -->
+              <span class="tag">Tableau</span>
+              <!-- <span class="tag">Microsoft Excel</span> -->
+              <span class="tag">Power BI </span>
+              <span class="tag">Google Analytics</span>
+              <!-- <span class="tag">n8n</span> -->
+              <!-- <span class="tag">Zapier</span> -->
+              <span class="tag">Looker</span>
+              <!-- <span class="tag">PowerPoint</span> -->
             </div>
           </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="two-column" style="margin-top: 2rem;">
+          <div>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Data Engineering Tools & Platforms</strong></p>
+            <div class="tag-grid">
+              <span class="tag">GitLab</span>
+              <!-- <span class="tag">VS Code</span> -->
+              <span class="tag">Apache Airflow</span>
+              <span class="tag">Snowflake</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Spark</span>
+              <span class="tag">Hadoop</span>
+            </div>
+          </div>
+
+          <div>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Libraries</strong></p>
+            <div class="tag-grid">
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Scikit-learn</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="two-column" style="margin-top: 2rem;">
+          <div>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Project Management & Methodologies</strong></p>
+            <div class="tag-grid">
+              <span class="tag">Agile</span>
+              <span class="tag">Scrum</span>
+              <span class="tag">Trello</span>
+              <!-- <span class="tag">Atlassian</span> -->
+            </div>
+          </div>
+
+          <div>
+            <p style="font-size:0.9rem; margin-bottom:0.2rem;"><strong>Automation & Integration Tools</strong></p>
+            <div class="tag-grid">
+              <span class="tag">n8n</span>
+              <span class="tag">Zapier</span>
+              <!-- <span class="tag">Trello</span> -->
+              <!-- <span class="tag">Atlassian</span> -->
+            </div>
+          </div>
+
+
+
+          <div></div> <!-- empty to keep layout aligned -->
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Professional Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <h2>PROFESSIONAL EXPERIENCE</h2>
+        </div>
+
+        <div class="card-list">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Senior Data Anlayst</div>
+                <div class="card-subtitle">Media.net | Adtech · 2022 – 2025</div>
+              </div>
+              <span class="card-badge">Full-time </span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Collaborated with PMs, developers, and business teams to create data-driven dashboards for data visualization, defining vital metrics like north-star, guardrail metrics, and KPIs.</li>
+                <li>Optimized ETL pipelines and SQL queries, achieving a 90% reduction in Redshift load and Tableau dataset storage, enhancing data accessibility and reducing operational costs.</li>
+                <li>Built a scalable automated workflow using n8n and PagerDuty to streamline proactive alert management and reduce noise, while optimising report creation with Apache Airflow.</li>
+                <!-- also add about operations and ideating , analysis of features , rca , a/b testing and evaluting its success also customer acquisition and monetization or lead genertaion -->
+                <li>Improved the CTR from 3% to 5.5% by analyzing email retargeted users and identifying bot clicks by user segmentation. This enhanced email-sending domain reputation.</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -550,74 +647,152 @@
     <section id="education">
       <div class="container">
         <div class="section-heading">
-          <div class="section-title">Education</div>
-          <h2>Education</h2>
+          <h2>EDUCATION</h2>
         </div>
 
         <div class="card-list">
           <article class="card">
             <div class="card-header">
               <div>
-                <div class="card-title">Degree or Program</div>
-                <div class="card-subtitle">University / College · 2021 – 2025</div>
+                <div class="card-title">MSc in Business Analytics</div>
+                <div class="card-subtitle">University of Exeter , UK · 2025 – 2026</div>
               </div>
-              <span class="card-badge">Current / Completed</span>
+              <span class="card-badge">Ongoing</span>
             </div>
             <div class="card-body">
               <ul>
-                <li>Relevant coursework or focus areas.</li>
-                <li>Notable achievements, GPA, or awards (if you want).</li>
+                <li>Relevant coursework : Machine Learning, Statistics, Big Data Analytics.</li>
+                <!-- <li>Achievements or GPA (optional).</li> -->
               </ul>
             </div>
           </article>
+        </div>
 
-          <!-- Duplicate this card for more education entries if needed -->
+        <div class="card-list">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Bachelor of Engineering in Electronics and Telecommunication </div>
+                <div class="card-subtitle">Rajiv Gandhi Institute of Technology, Mumbai, India · 2018 – 2022</div>
+              </div>
+              <span class="card-badge">Completed</span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <!-- <li>Relevant coursework or focus areas.</li> -->
+                <!-- <li>Achievements or GPA (optional).</li> -->
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Professional Experience -->
-    <section id="experience">
+    <!-- Projects -->
+    <section id="projects">
       <div class="container">
         <div class="section-heading">
-          <div class="section-title">Experience</div>
-          <h2>Professional experience</h2>
+          <h2>PROJECTS</h2>
         </div>
 
         <div class="card-list">
           <article class="card">
             <div class="card-header">
               <div>
-                <div class="card-title">Job title / Internship</div>
-                <div class="card-subtitle">Company name · 2023 – Present</div>
+                <div class="card-title">Statistical Modeling for Housing Rent Prediction </div>
+                <div class="card-subtitle">Skills - Impact measurement, Statistics, Machine Learning, Hypothesis
+                  testing, Forecasting</div>
               </div>
-              <span class="card-badge">Full-time / Intern</span>
+              <span class="card-badge">Featured</span>
             </div>
             <div class="card-body">
               <ul>
-                <li>Describe what you worked on and your impact.</li>
-                <li>Mention technologies used.</li>
-                <li>Include specific results if possible (e.g. improved load time, reduced bugs).</li>
+                <li>Performed exploratory data analysis (EDA) on Kaggle’s India rental housing dataset to uncover market
+                  trends, pricing factors, and distribution patterns.</li>
+                <li>Built regression models (XGBoost, Random Forest) to predict rental prices with improved accuracy and
+                  reliability.</li>
+                <li>Optimized XGBoost and Random Forest models using RandomizedSearchCV, achieving high accuracy
+                  (XGBoost R²: 0.94, RMSE: ~12K, MAE: ~5.4K) outperforming baseline models.</li>
+                <li>Validated model robustness through K-Fold cross-validation and residual analysis, ensuring
+                  consistency in predictions and reliable error distribution patterns.</li>
               </ul>
+              <p style="margin-top:0.4rem;">
+                <a href="https://github.com/shivaniadsule/Rent-analysis-and-prediction" target="_blank">GitHub repo</a>
+              </p>
             </div>
           </article>
+          <div class="card-list">
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Analytics AI Agent for Financial Transaction Data</div>
+                  <div class="card-subtitle">Skills - Prompt engineering, AI Product Development </div>
+                </div>
+                <span class="card-badge">Featured</span>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li>Built an AI analytics agent that transforms complex database queries into conversational
+                    interactions, enabling business users to extract insights from 300K+ transactions without technical
+                    knowledge.</li>
+                  <li>Leveraged Groq's Llama 3.3 LLM to automate SQL query generation and data interpretation, reducing
+                    analysis time from hours to seconds. </li>
+                  <li>Designed and implemented a secure, scalable Flask application with multi-layer validation
+                    preventing destructive operations and ensuring data integrity across all user interactions.</li>
+                  <li>Achieved successful cloud deployment on Render with automated CI/CD pipeline, demonstrating
+                    full-stack development capabilities from database design to production deployment</li>
+                </ul>
+                <p style="margin-top:0.4rem;">
+                  <a href="https://github.com/shivaniadsule/Analytics-AI-Agent" target="_blank">GitHub repo </a> .
+                  <a href="https://analytics-agent-saqg.onrender.com" target="_blank">Live Demo</a>
+                </p>
+              </div>
+            </article>
+            <!-- Duplicate this card for more projects -->
+          </div>
+        </div>
+    </section>
 
-          <!-- Add more experience cards as needed -->
+    <!-- Contact section (for navbar link) -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>CONTACT</h2>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <p>
+              If you’d like to talk about a role, collaboration, or project,
+              feel free to reach out to me .
+            </p>
+          </div>
+          <div>
+            <div class="contact-card">
+              <div>Email: <a href="mailto:adsule.shivani@gmail.com">adsule.shivani@gmail.com</a></div>
+              <div class="contact-row" style="margin-top:0.4rem;">
+                <a class="contact-chip" href="https://github.com/shivaniadsule" target="_blank">GitHub</a>
+                <a class="contact-chip" href="https://www.linkedin.com/in/shivani-adsule-ab46051b5/"
+                  target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <!-- <footer>
     <div class="container">
       <span>© <span id="year"></span> Your Name</span>
       <span>Portfolio hosted on GitHub Pages</span>
     </div>
-  </footer>
+  </footer> -->
 
   <script>
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
